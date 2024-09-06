@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color:goldenrod;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+.cell {
+    background-color:grey;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Add this CSS */
+.cell.x::before {
+    content: 'X';
+    color:yellow;
+}
+
+.cell.circle::before {
+    content: 'O';
+    color: yellowgreen;
+}
+
+.winning-message {
+    display: none;
+    position: absolute;
+    background-color: violet(0, 0, 0, 0.8);
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.winning-message button {
+    background-color: lavenderblush;
+    color:violet;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
